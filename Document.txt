@@ -1,0 +1,104 @@
+## Overview
+
+This is a personal portfolio website for Abdalrhem Salah, a Computer Science student and Full Stack Developer. Originally built with React/TypeScript, now converted to vanilla HTML, CSS, and JavaScript as requested. The website serves as both a professional portfolio and an educational demonstration of Object-Oriented Programming (OOP) principles using real-world examples and comprehensive documentation.
+
+## User Preferences
+
+Preferred communication style: Simple, everyday language.
+
+## System Architecture
+
+The application follows a full-stack architecture with clear separation between frontend and backend concerns:
+
+- **Frontend**: React-based SPA with modern UI components
+- **Backend**: Express.js API server with minimal endpoints
+- **Database**: PostgreSQL with Drizzle ORM (configured but not actively used)
+- **Styling**: Tailwind CSS with shadcn/ui component library
+- **Build System**: Vite for development and production builds
+
+## Key Components
+
+### Frontend Architecture
+- **Framework**: Vanilla HTML, CSS, and JavaScript (converted from React/TypeScript)
+- **Architecture Pattern**: Object-Oriented Programming with comprehensive OOP principles demonstration
+- **Class Hierarchy**: Abstract base classes (UIManager, AnimationStrategy) with specialized implementations
+- **Design Patterns**: Strategy Pattern (animations), Observer Pattern (events), Composition over Inheritance
+- **State Management**: Encapsulated class-based state with private fields and controlled interfaces
+- **UI Components**: Manager classes handling specific functionality (Theme, Navigation, Animation, Contact, CV)
+- **Styling**: Custom CSS with CSS variables for theming and responsive design
+- **Theme System**: Object-oriented ThemeManager with encapsulated state and event-driven updates
+
+### Backend Architecture
+- **Server**: Express.js with TypeScript
+- **API Structure**: RESTful endpoints under `/api` prefix
+- **Development**: Integrated with Vite dev server in development mode
+- **Error Handling**: Centralized error middleware
+- **Logging**: Custom request logging for API endpoints
+
+### Database Layer
+- **ORM**: Drizzle ORM with PostgreSQL dialect
+- **Provider**: Neon Database serverless
+- **Migrations**: Drizzle Kit for schema migrations
+- **Storage**: In-memory storage implementation for development
+
+## Data Flow
+
+### Page Navigation
+1. User lands on home page (`/`)
+2. Single-page application with smooth scrolling between sections
+3. Navigation handled by wouter router with hash-based section scrolling
+
+### Theme Management
+1. Theme state managed in React Context
+2. Persisted to localStorage with key `portfolio-theme`
+3. CSS variables updated on theme change
+4. Tailwind classes conditionally applied based on theme
+
+### API Interactions
+1. Health check endpoint for server status
+2. CV download endpoint (placeholder implementation)
+3. Minimal API surface since this is primarily a static portfolio
+
+## External Dependencies
+
+### Core Framework Dependencies
+- **React Ecosystem**: react, react-dom, @tanstack/react-query
+- **UI Components**: @radix-ui/* components, lucide-react icons
+- **Styling**: tailwindcss, class-variance-authority, clsx
+- **Database**: drizzle-orm, @neondatabase/serverless
+- **Development**: vite, typescript, tsx
+
+### Design System
+- **Component Library**: shadcn/ui with "new-york" style
+- **Color Scheme**: Neutral base colors with custom portfolio accent colors
+- **Typography**: Inter font family from Google Fonts
+- **Icons**: Lucide React icon library
+
+## Deployment Strategy
+
+### Development
+- Vite development server with HMR
+- Express server running on Node.js with tsx
+- Integrated development experience with Replit
+
+### Production Build
+- Frontend: Vite build generates optimized static assets
+- Backend: esbuild bundles server code as ESM
+- Static assets served from `dist/public`
+- Server bundle output to `dist/index.js`
+
+### Environment Configuration
+- Database connection via `DATABASE_URL` environment variable
+- Development/production mode via `NODE_ENV`
+- Replit-specific integrations for cloud development
+
+### Key Architectural Decisions
+
+1. **Monorepo Structure**: All code in single repository with shared types
+2. **Component-First Design**: Reusable UI components with consistent styling
+3. **Minimal Backend**: Simple Express server since portfolio is mostly static
+4. **Modern Tooling**: Vite for fast development, TypeScript for type safety
+5. **Responsive Design**: Mobile-first approach with Tailwind breakpoints
+6. **Performance**: Code splitting, optimized builds, and efficient asset loading
+
+The application prioritizes simplicity, maintainability, and excellent user experience while showcasing modern web development practices.
